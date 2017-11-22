@@ -42,10 +42,7 @@ bot.dialog('SearchHotels', [
             // airport entity detected, continue to next step
             session.dialogData.searchType = 'airport';
             next({ response: airportEntity.entity });
-        }  else if (city){
-          session.dialogData.searchType="city";
-          next({response: city.entity});
-        } else {
+        }   else {
             // no entities detected, ask user for a destination
             builder.Prompts.text(session, 'Please enter your destination');
         }
